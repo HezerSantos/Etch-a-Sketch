@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+}
+
+.buttonContainer{
+    text-align: center;
+}
+#gridButton{
+    height: 50px;
+    width: 100px;
+    border-radius: 5%;
+    margin: 2%
+}
+
+.squareGridContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.squareGrid{
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    padding: 2%;
+}
