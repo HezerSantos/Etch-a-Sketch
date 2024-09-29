@@ -6,21 +6,28 @@ for (i = 0; i < 256; i++){
         gridSquare.style.backgroundColor = 'black';
     })
     gridSquare.addEventListener('mouseleave', () =>{
-        gridSquare.style.backgroundColor = '';
+        //gridSquare.style.backgroundColor = '';
     })
-    gridSquare.setAttribute("style", `border: solid 1px black; width: ${900 / 16}px; height: ${900 / 16}px; margin: 0;`);
+    gridSquare.setAttribute("style", `width: ${900 / 16}px; height: ${900 / 16}px; margin: 0;`);
     
     container.appendChild(gridSquare);
 }
 
 const gridButton = document.querySelector('#gridButton');
+const buttonStyle = document.querySelectorAll('.buttonContainer button');
 
-gridButton.addEventListener('mouseover', () => {
-    gridButton.style.fontWeight = 'bold';
-})
-gridButton.addEventListener('mouseleave', () => {
-    gridButton.style.fontWeight = '';
-})
+buttonStyle.forEach((button) => {
+    button.addEventListener('mouseover', () => {
+        button.style.fontWeight = 'bold';
+    });
+    
+    
+    button.addEventListener('mouseleave', () => {
+        button.style.fontWeight = '';
+    })
+});
+
+
 gridButton.addEventListener('click', () => {
     let height = parseInt(prompt('Enter squares for height'));
     let width = parseInt(prompt('Enter squares for length'));
@@ -41,9 +48,10 @@ gridButton.addEventListener('click', () => {
 
     for (i = 0; i < dimension; i++){
         const gridSquare = document.createElement("div");
+
         gridSquare.addEventListener('mousemove', () =>{
         gridSquare.style.backgroundColor = 'black';
-
+        
         })
         gridSquare.addEventListener('mouseleave', () =>{
             gridSquare.style.backgroundColor = '';
@@ -52,4 +60,3 @@ gridButton.addEventListener('click', () => {
         container.appendChild(gridSquare);
     }
 })
-console.log(dimension)
