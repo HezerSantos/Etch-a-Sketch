@@ -5,9 +5,6 @@ for (i = 0; i < 256; i++){
     gridSquare.addEventListener('mouseover', () =>{
         gridSquare.style.backgroundColor = 'black';
     })
-    gridSquare.addEventListener('mouseleave', () =>{
-        //gridSquare.style.backgroundColor = '';
-    })
     gridSquare.setAttribute("style", `width: ${900 / 16}px; height: ${900 / 16}px; margin: 0;`);
     
     container.appendChild(gridSquare);
@@ -50,13 +47,21 @@ gridButton.addEventListener('click', () => {
         const gridSquare = document.createElement("div");
 
         gridSquare.addEventListener('mousemove', () =>{
-        gridSquare.style.backgroundColor = 'black';
-        
+            gridSquare.style.backgroundColor = 'black';
         })
-        gridSquare.addEventListener('mouseleave', () =>{
-            gridSquare.style.backgroundColor = '';
-        })
+
         gridSquare.setAttribute("style", `width: ${900 / height}px; height: ${900 / height}px; margin: 0;`);
         container.appendChild(gridSquare);
     }
 })
+
+const clearButton = document.querySelector('#clearButton');
+
+clearButton.addEventListener('click', () =>{
+    const contChildren = container.children;
+    console.log(contChildren);
+    for (let i = 0; i < contChildren.length; i++) {
+        contChildren[i].style.backgroundColor = '';
+    }
+});
+    
