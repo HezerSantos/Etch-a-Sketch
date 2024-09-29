@@ -57,11 +57,11 @@ gridButton.addEventListener('click', () => {
 
 const clearButton = document.querySelector('#clearButton');
 
+
 clearButton.addEventListener('click', () =>{
-    const contChildren = container.children;
-    console.log(contChildren);
-    for (let i = 0; i < contChildren.length; i++) {
-        contChildren[i].style.backgroundColor = '';
-    }
+    const containerM = document.querySelectorAll('#container div')
+    containerM.forEach((div) => {
+        div.style.backgroundColor = '';
+    })
 });
     
