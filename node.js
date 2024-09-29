@@ -62,6 +62,7 @@ clearButton.addEventListener('click', () =>{
     console.log(contChildren);
     for (let i = 0; i < contChildren.length; i++) {
         contChildren[i].style.backgroundColor = '';
+        
     }
 });
     
